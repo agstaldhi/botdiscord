@@ -21,6 +21,7 @@ module.exports = {
    * @param {import('../../utils/CommandContext')} ctx 
    */
   async execute(ctx) {
+    await ctx.deferReply();
     const settings = await helpers.getSettings(ctx.guild.id);
     const prefix = settings.prefix || '!';
     
